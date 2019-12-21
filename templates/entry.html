@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{article_name}} - ***Название блога***</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <h1>{{article_name}}</h1>
+    <p>{{article_content}}</p>
+            <p>Комментарии:</p>
+
+    <form action="/add_message" method="post">
+        <p><textarea rows="5" cols="45" name="text"></textarea></p>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <h3>Прошлые комментарии:</h3>
+    {% for message in messages %}
+    <div>{{ message.text }}</div>
+    {% endfor %}
+<!-- тут должна быть статья и комментарии к статье -->
+
+</body>
+</html>
